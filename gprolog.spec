@@ -83,7 +83,7 @@ Dokumentacja dla GNU Prolog w formacie HTML
 %build
 cd src
 aclocal
-autoconf
+%{__autoconf}
 %configure \
 	--with-install-dir=$RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
