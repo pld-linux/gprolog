@@ -3,11 +3,12 @@ Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog
 Summary(pt_BR):	O Prolog GNU
 Summary(es):	O Prolog GNU
 Name:		gprolog
-Version:	1.2.13
-Release:	2
+Version:	1.2.16
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.inria.fr//INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
+Source1:	%{name}-pred.wam
 URL:		http://gprolog.inria.fr/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -55,6 +56,7 @@ GNU Prolog es un compilador nativo Prolog.
 
 %build
 cd src
+cp %{SOURCE1} BipsPl/pred.wam
 %{__aclocal}
 %{__autoconf}
 %configure \
