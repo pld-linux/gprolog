@@ -49,42 +49,6 @@ O GNU Prolog é um compilador nativo Prolog.
 %description -l es
 GNU Prolog es un compilador nativo Prolog.
 
-%package doc-ps
-Summary:	PostScript documentation for GNU Prolog
-Summary(pl):	Dokumentacja dla GNU Prolog w formacie PostSript
-Group:		Development/Tools
-Requires:	%{name} = %{version}
-
-%description doc-ps
-PostScript documentation for GNU Prolog
-
-%description doc-ps -l pl
-Dokumentacja dla GNU Prolog w formacie PostSript
-
-%package doc-pdf
-Summary:	PDF documentation for GNU Prolog
-Summary(pl):	Dokumentacja dla GNU Prolog w formacie PDF
-Group:		Development/Tools
-Requires:	%{name} = %{version}
-
-%description doc-pdf
-PDF documentation for GNU Prolog
-
-%description doc-pdf -l pl
-Dokumentacja dla GNU Prolog w formacie PDF
-
-%package doc-html
-Summary:	HTML documentation for GNU Prolog
-Summary(pl):	Dokumentacja dla GNU Prolog w formacie HTML
-Group:		Development/Tools
-Requires:	%{name} = %{version}
-
-%description doc-html
-HTML documentation for GNU Prolog
-
-%description doc-html -l pl
-Dokumentacja dla GNU Prolog w formacie HTML
-
 %prep
 %setup -q
 
@@ -119,29 +83,15 @@ cd ..
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -ar Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf ChangeLog NEWS README doc/manual.ps
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog NEWS README doc/manual.ps
 %attr(755,root,root) %{_bindir}/*
 %dir %attr(755,root,root) %{_libdir}/%{name}-%{version}/
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
 %{_libdir}/%{name}-%{version}/include
 %{_libdir}/%{name}-%{version}/lib
 %{_examplesdir}/%{name}-%{version}
-
-%files doc-html
-%defattr(644,root,root,755)
-%doc doc/Html
-
-%files doc-ps
-%defattr(644,root,root,755)
-%doc doc/manual.ps.gz
-
-%files doc-pdf
-%defattr(644,root,root,755)
-%doc doc/manual.pdf
