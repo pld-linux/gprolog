@@ -5,8 +5,6 @@ Version:	1.2.8
 Release:	1
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.inria.fr//INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
 URL:		http://gprolog.inria.fr/
 ExclusiveArch:	%{ix86}
@@ -47,9 +45,6 @@ predefiniowanymi ograniczaczami i heurestykami.
 Summary:	PostScript documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie PostSript
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-ps
@@ -62,9 +57,6 @@ Dokumentacja dla GNU Prolog w formacie PostSript
 Summary:	PDF documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie PDF
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-pdf
@@ -77,9 +69,6 @@ Dokumentacja dla GNU Prolog w formacie PDF
 Summary:	HTML documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie HTML
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-html
