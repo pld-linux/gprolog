@@ -47,6 +47,9 @@ predefiniowanymi ograniczaczami i heurestykami.
 Summary:	PostScript documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie PostSript
 Group:		Development/Tools
+Group(de):	Entwicklung/Werkzeuge
+Group(fr):	Development/Outils
+Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-ps
@@ -59,6 +62,9 @@ Dokumentacja dla GNU Prolog w formacie PostSript
 Summary:	PDF documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie PDF
 Group:		Development/Tools
+Group(de):	Entwicklung/Werkzeuge
+Group(fr):	Development/Outils
+Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-pdf
@@ -71,6 +77,9 @@ Dokumentacja dla GNU Prolog w formacie PDF
 Summary:	HTML documentation for GNU Prolog
 Summary(pl):	Dokumentacja dla GNU Prolog w formacie HTML
 Group:		Development/Tools
+Group(de):	Entwicklung/Werkzeuge
+Group(fr):	Development/Outils
+Group(pl):	Programowanie/Narzêdzia
 Requires:	%{name} = %{version}
 
 %description doc-html
@@ -129,10 +138,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_examplesdir}/%{name}-%{version}
 
 %files doc-html
+%defattr(644,root,root,755)
 %doc doc/Html
 
 %files doc-ps
+%defattr(644,root,root,755)
 %doc doc/manual.ps.gz
 
 %files doc-pdf
+%defattr(644,root,root,755)
 %doc doc/manual.pdf
