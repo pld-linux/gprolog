@@ -4,12 +4,11 @@ Summary(pt_BR):	O Prolog GNU
 Summary(es):	O Prolog GNU
 Name:		gprolog
 Version:	1.2.13
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.inria.fr//INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
 URL:		http://gprolog.inria.fr/
-ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
