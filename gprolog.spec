@@ -4,7 +4,7 @@ Summary(pl):	GNU Prolog - darmowy kompilator jêzyka Prolog
 Summary(pt_BR):	O Prolog GNU
 Name:		gprolog
 Version:	1.2.16
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.inria.fr/INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
@@ -110,7 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README doc/manual.ps
 %attr(755,root,root) %{_bindir}/*
-%dir %attr(755,root,root) %{_libdir}/%{name}-%{version}
+%dir %{_libdir}/%{name}-%{version}
+%dir %{_libdir}/%{name}-%{version}/bin
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
 %{_libdir}/%{name}-%{version}/include
 %{_libdir}/%{name}-%{version}/lib
