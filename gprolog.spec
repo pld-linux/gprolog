@@ -9,6 +9,8 @@ License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.inria.fr//INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
 URL:		http://gprolog.inria.fr/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,10 +55,10 @@ GNU Prolog es un compilador nativo Prolog.
 
 %build
 cd src
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure \
-	--with-install-dir=$RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version} \
+	--with-install-dir=$RPM_BUILD_ROOT%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
 	--without-links-dir \
 	--without-examples-dir \
@@ -70,8 +72,8 @@ cd src
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 (
-install -d $RPM_BUILD_ROOT/%{_bindir}
-cd $RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version}/bin
+install -d $RPM_BUILD_ROOT%{_bindir}
+cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
 	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT/%{_bindir}/$i
 done
