@@ -58,6 +58,7 @@ GNU Prolog es un compilador nativo Prolog.
 cd src
 cp %{SOURCE1} BipsPl/pred.wam
 %{__aclocal}
+install /usr/share/automake/config.* .
 %{__autoconf}
 %configure \
 	--with-install-dir=$RPM_BUILD_ROOT%{_libdir}/%{name}-%{version} \
