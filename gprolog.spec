@@ -13,6 +13,7 @@ Source1:	%{name}-pred.wam
 URL:		http://gprolog.inria.fr/
 BuildRequires:	autoconf
 BuildRequires:	automake
+ExclusiveArch:	%{ix86} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
