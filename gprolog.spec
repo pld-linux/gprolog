@@ -7,7 +7,7 @@ Version:	1.2.16
 Release:	1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://ftp.inria.fr//INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.inria.fr/INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
 # Source0-md5:	d7fe87106cd3e7e770375f04dd0d14c2
 Source1:	%{name}-pred.wam
 URL:		http://gprolog.inria.fr/
