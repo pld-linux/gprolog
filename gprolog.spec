@@ -1,5 +1,5 @@
-Summary:	GNU Prolog is a free Prolog compiler with constraint solving over Finite Domains
-Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog
+Summary:	GNU Prolog - a free Prolog compiler with constraint solving over Finite Domains
+Summary(pl):	GNU Prolog - darmowy kompilator jêzyka Prolog
 Summary(pt_BR):	O Prolog GNU
 Summary(es):	O Prolog GNU
 Name:		gprolog
@@ -31,20 +31,20 @@ GNU Prolog also includes a powerful constraint solver over finite
 domains with many predefined constraints+heuristics.
 
 %description -l pl
-GNU Prolog jest bezpo¶rednim kompilatorem Prolog-u z narzuconymi
+GNU Prolog jest bezpo¶rednim kompilatorem Prologu z narzuconymi
 ograniczeniami ponad "finite domains (FD)" tworzonym przez Daniela
 Diaz (http://loco.inria.fr/~diaz/)
 
-GNU Prolog jest bardzo efektywnym bezpo¶rednim kompilatorem tworzo±cym
+GNU Prolog jest bardzo efektywnym bezpo¶rednim kompilatorem tworz±cym
 ma³e samodzielne programy wykonywalne. GNU-Prolog oferuje te¿
-klasyczny interfejst wysokiego poziomu oraz debugger.
+klasyczny interfejs wysokiego poziomu oraz debugger.
 
 GNU Prolog jest zgodny z standardem ISO jêzyka Prolog oraz oferuje
 dodatkowo kilka rozszerzeñ (zmienne globalne, DCG, gniazdka, interfejs
 do systemu operacyjnego, ...).
 
 GNU Prolog zawiera te¿ porêczny solver finite domains z wieloma
-predefiniowanymi ograniczaczami i heurestykami.
+predefiniowanymi ograniczaczami i heurystykami.
 
 %description -l pt_BR
 O GNU Prolog é um compilador nativo Prolog.
@@ -73,13 +73,14 @@ install /usr/share/automake/config.* .
 %install
 rm -rf $RPM_BUILD_ROOT
 cd src
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 (
 install -d $RPM_BUILD_ROOT%{_bindir}
 cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
-	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT/%{_bindir}/$i
+	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
 done
 )
 
@@ -95,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README doc/manual.ps
 %attr(755,root,root) %{_bindir}/*
-%dir %attr(755,root,root) %{_libdir}/%{name}-%{version}/
+%dir %attr(755,root,root) %{_libdir}/%{name}-%{version}
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
 %{_libdir}/%{name}-%{version}/include
 %{_libdir}/%{name}-%{version}/lib
