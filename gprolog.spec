@@ -12,7 +12,7 @@ URL:		http://gprolog.inria.fr/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%description 
+%description
 GNU Prolog is a native Prolog compiler with constraint solving over
 finite domains (FD) developed by Daniel Diaz
 (http://loco.inria.fr/~diaz/).
@@ -85,7 +85,7 @@ Requires:	%{name} = %{version}
 %description doc-html
 HTML documentation for GNU Prolog
 
-%description doc-ps -l pl
+%description doc-html -l pl
 Dokumentacja dla GNU Prolog w formacie HTML
 
 %prep
@@ -113,7 +113,7 @@ cd src
 install -d $RPM_BUILD_ROOT/%{_bindir}
 cd $RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version}/bin
 for i in *; do
- 	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT/%{_bindir}/$i
+	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT/%{_bindir}/$i
 done
 )
 
