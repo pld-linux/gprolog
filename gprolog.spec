@@ -1,7 +1,7 @@
 Summary:	GNU Prolog is a free Prolog compiler with constraint solving over Finite Domains
 Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog
 Name:		gprolog
-Version:	1.2.1
+Version:	1.2.8
 Release:	1
 License:	GPL
 Group:		Development/Languages
@@ -10,7 +10,7 @@ Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.inria.fr/Projects/loco/gprolog/%{name}-%{version}.tar.gz
 URL:		http://gprolog.inria.fr/
 ExclusiveArch:	%{ix86}
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description 
 GNU Prolog is a native Prolog compiler with constraint solving over
@@ -43,11 +43,49 @@ do systemu operacyjnego, ...).
 GNU Prolog zawiera te¿ porêczny solver finite domains z wieloma
 predefiniowanymi ograniczaczami i heurestykami.
 
+%package doc-ps
+Summary:	PostScript documentation for GNU Prolog
+Summary(pl):	Dokumentacja dla GNU Prolog w formacie PostSript
+Group:		Development/Tools
+Requires:	%{name} = %{version}
+
+%description doc-ps
+PostScript documentation for GNU Prolog
+
+%description doc-ps -l pl
+Dokumentacja dla GNU Prolog w formacie PostSript
+
+%package doc-pdf
+Summary:	PDF documentation for GNU Prolog
+Summary(pl):	Dokumentacja dla GNU Prolog w formacie PDF
+Group:		Development/Tools
+Requires:	%{name} = %{version}
+
+%description doc-pdf
+PDF documentation for GNU Prolog
+
+%description doc-pdf -l pl
+Dokumentacja dla GNU Prolog w formacie PDF
+
+%package doc-html
+Summary:	HTML documentation for GNU Prolog
+Summary(pl):	Dokumentacja dla GNU Prolog w formacie HTML
+Group:		Development/Tools
+Requires:	%{name} = %{version}
+
+%description doc-html
+HTML documentation for GNU Prolog
+
+%description doc-ps -l pl
+Dokumentacja dla GNU Prolog w formacie HTML
+
 %prep
 %setup -q
 
 %build
 cd src
+aclocal
+autoconf
 %configure \
 	--with-install-dir=$RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
@@ -71,16 +109,30 @@ done
 )
 
 cd ..
-gzip -9nf ChangeLog NEWS README
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -ar Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+gzip -9nf ChangeLog NEWS README doc/manual.ps
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %dir %attr(755,root,root) %{_libdir}/%{name}-%{version}/
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
 %{_libdir}/%{name}-%{version}/include
 %{_libdir}/%{name}-%{version}/lib
+%{_examplesdir}/%{name}-%{version}
+
+%files doc-html
+%doc doc/Html
+
+%files doc-ps
+%doc doc/manual.ps.gz
+
+%files doc-pdf
+%doc doc/manual.pdf
