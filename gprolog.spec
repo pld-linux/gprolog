@@ -1,7 +1,9 @@
 Summary:	GNU Prolog is a free Prolog compiler with constraint solving over Finite Domains
 Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog
+Summary(pt_BR):	O Prolog GNU
+Summary(es):	O Prolog GNU
 Name:		gprolog
-Version:	1.2.8
+Version:	1.2.13
 Release:	1
 License:	GPL
 Group:		Development/Languages
@@ -40,6 +42,12 @@ do systemu operacyjnego, ...).
 
 GNU Prolog zawiera te¿ porêczny solver finite domains z wieloma
 predefiniowanymi ograniczaczami i heurestykami.
+
+%description -l pt_BR
+O GNU Prolog é um compilador nativo Prolog.
+
+%description -l es
+GNU Prolog es un compilador nativo Prolog.
 
 %package doc-ps
 Summary:	PostScript documentation for GNU Prolog
