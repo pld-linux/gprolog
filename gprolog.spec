@@ -1,5 +1,5 @@
 Summary:	GNU Prolog is a free Prolog compiler with constraint solving over Finite Domains
-Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog.
+Summary(pl):	GNU Prolog jest darmowym kompilatorem jêzyka Prolog
 Name:		gprolog
 Version:	1.2.1
 Release:	1
@@ -9,8 +9,8 @@ Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.inria.fr/Projects/loco/gprolog/%{name}-%{version}.tar.gz
 URL:		http://gprolog.inria.fr/
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveArch:	%{ix86}
+Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description 
 GNU Prolog is a native Prolog compiler with constraint solving over
@@ -26,9 +26,6 @@ lot of extensions (global variables, DCG, sockets, OS interface,...).
 
 GNU Prolog also includes a powerful constraint solver over finite
 domains with many predefined constraints+heuristics.
-
-More information can be found at http://www.gnu.org/software/prolog/
-or better at http://gprolog.inria.fr/
 
 %description -l pl
 GNU Prolog jest bezpo¶rednim kompilatorem Prolog-u z narzuconymi
@@ -46,9 +43,6 @@ do systemu operacyjnego, ...).
 GNU Prolog zawiera te¿ porêczny solver finite domains z wieloma
 predefiniowanymi ograniczaczami i heurestykami.
 
-Wiêcej informacji znajdziesz na stronie
-http://www.gnu.org/software/prolog/ lub http://gprolog.inria.fr/
-
 %prep
 %setup -q
 
@@ -57,7 +51,7 @@ cd src
 %configure \
 	--with-install-dir=$RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
-    --without-links-dir \
+	--without-links-dir \
 	--without-examples-dir \
 	--without-doc-dir \
 	--without-html-dir
