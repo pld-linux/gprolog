@@ -39,13 +39,13 @@ cd src
 %configure --with-install-dir=$RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version} \
             --without-links-dir --without-examples-dir \
 --with-doc-dir=$RPM_BUILD_ROOT%{_datadir}/doc/%{name}-%{version}
-%{__make}
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 cd src
-%{__make} install-strip
-mkdir $RPM_BUILD_ROOT/%{_bindir}
+%{__make} install
+install -d $RPM_BUILD_ROOT/%{_bindir}
 cd $RPM_BUILD_ROOT/%{_libdir}/%{name}-%{version}/bin
 for i in *; do
 	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT/%{_bindir}/$i
