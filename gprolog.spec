@@ -101,7 +101,7 @@ done
 cd ..
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -ar Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
