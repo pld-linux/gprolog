@@ -1,7 +1,7 @@
 Summary:	GNU Prolog - a free Prolog compiler with constraint solving over Finite Domains
-Summary(es):	Prolog de GNU - un compilador libre de Prolog con resolución de ligaduras sobre dominios finitos
-Summary(pl):	GNU Prolog - darmowy kompilator jêzyka Prolog
-Summary(pt_BR):	O Prolog GNU
+Summary(es.UTF-8):   Prolog de GNU - un compilador libre de Prolog con resoluciÃ³n de ligaduras sobre dominios finitos
+Summary(pl.UTF-8):   GNU Prolog - darmowy kompilator jÄ™zyka Prolog
+Summary(pt_BR.UTF-8):   O Prolog GNU
 Name:		gprolog
 Version:	1.2.16
 Release:	5
@@ -31,40 +31,40 @@ lot of extensions (global variables, DCG, sockets, OS interface,...).
 GNU Prolog also includes a powerful constraint solver over finite
 domains with many predefined constraints+heuristics.
 
-%description -l es
-GNU Prolog es un compilador nativo de Prolog con resolución de ligaduras
+%description -l es.UTF-8
+GNU Prolog es un compilador nativo de Prolog con resoluciÃ³n de ligaduras
 sobre dominios finitos (FD: Finite Domains), desarrollado por Daniel Diaz
 (http://loco.inria.fr/~diaz/).
 
 GNU Prolog es un compilador nativo muy eficiente que produce ejecutables
-independientes (y pequeños). GNU Prolog también ofrece un clásico nivel alto
+independientes (y pequeÃ±os). GNU Prolog tambiÃ©n ofrece un clÃ¡sico nivel alto
 y un depurador.
 
-GNU Prolog implementa el estándar ISO para Prolog, sin embargo incluye
-un montón de extensiones (variables globales, DCG, sockets, inferfaz de SO,
+GNU Prolog implementa el estÃ¡ndar ISO para Prolog, sin embargo incluye
+un montÃ³n de extensiones (variables globales, DCG, sockets, inferfaz de SO,
 ...).
 
-GNU Prolog también habilita resolver ligaduras sobre dominios finitos con
+GNU Prolog tambiÃ©n habilita resolver ligaduras sobre dominios finitos con
 varias ligaduras predefinidas y unas heuristicas.
 
-%description -l pl
-GNU Prolog jest bezpo¶rednim kompilatorem Prologu z narzuconymi
+%description -l pl.UTF-8
+GNU Prolog jest bezpoÅ›rednim kompilatorem Prologu z narzuconymi
 ograniczeniami ponad "finite domains (FD)" tworzonym przez Daniela
 Diaz (http://loco.inria.fr/~diaz/)
 
-GNU Prolog jest bardzo efektywnym bezpo¶rednim kompilatorem tworz±cym
-ma³e samodzielne programy wykonywalne. GNU-Prolog oferuje te¿
+GNU Prolog jest bardzo efektywnym bezpoÅ›rednim kompilatorem tworzÄ…cym
+maÅ‚e samodzielne programy wykonywalne. GNU-Prolog oferuje teÅ¼
 klasyczny interfejs wysokiego poziomu oraz debugger.
 
-GNU Prolog jest zgodny z standardem ISO jêzyka Prolog oraz oferuje
-dodatkowo kilka rozszerzeñ (zmienne globalne, DCG, gniazdka, interfejs
+GNU Prolog jest zgodny z standardem ISO jÄ™zyka Prolog oraz oferuje
+dodatkowo kilka rozszerzeÅ„ (zmienne globalne, DCG, gniazdka, interfejs
 do systemu operacyjnego, ...).
 
-GNU Prolog zawiera te¿ porêczny solver finite domains z wieloma
+GNU Prolog zawiera teÅ¼ porÄ™czny solver finite domains z wieloma
 predefiniowanymi ograniczaczami i heurystykami.
 
-%description -l pt_BR
-O GNU Prolog é um compilador nativo Prolog.
+%description -l pt_BR.UTF-8
+O GNU Prolog Ã© um compilador nativo Prolog.
 
 %prep
 %setup -q
