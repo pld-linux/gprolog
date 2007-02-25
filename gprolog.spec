@@ -3,14 +3,14 @@ Summary(es.UTF-8):	Prolog de GNU - un compilador libre de Prolog con resolución
 Summary(pl.UTF-8):	GNU Prolog - darmowy kompilator języka Prolog
 Summary(pt_BR.UTF-8):	O Prolog GNU
 Name:		gprolog
-Version:	1.2.16
-Release:	5
+Version:	1.3.0
+Release:	1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://ftp.inria.fr/INRIA/Projects/contraintes/gnu-prolog/%{name}-%{version}.tar.gz
-# Source0-md5:	d7fe87106cd3e7e770375f04dd0d14c2
+Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
+# Source0-md5:	950736db26248f6ed942191ec6c441e9
 Source1:	%{name}-pred.wam
-URL:		http://gprolog.inria.fr/
+URL:		http://www.gprolog.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 ExclusiveArch:	%{ix86} alpha ppc
@@ -66,6 +66,19 @@ predefiniowanymi ograniczaczami i heurystykami.
 %description -l pt_BR.UTF-8
 O GNU Prolog é um compilador nativo Prolog.
 
+%package examples
+Summary:    Examples for gprolog
+Summary(pl.UTF-8):  Przykłady dla gprolog
+Group:	    Development/Languages
+Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-examples = %{version}-%{release}
+
+%description examples
+Examples for gprolog.
+
+%description examples -l pl.UTF-8
+Przykłady dla gprolog.
+
 %prep
 %setup -q
 
@@ -73,9 +86,9 @@ O GNU Prolog é um compilador nativo Prolog.
 cd src
 cp %{SOURCE1} BipsPl/pred.wam
 %{__aclocal}
-install /usr/share/automake/config.* .
 %{__autoconf}
 %configure \
+	--prefix=$RPM_BUILD_ROOT \
 	--with-install-dir=$RPM_BUILD_ROOT%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
 	--without-links-dir \
@@ -87,14 +100,13 @@ install /usr/share/automake/config.* .
 %install
 rm -rf $RPM_BUILD_ROOT
 cd src
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%{__make} install
 
 (
 install -d $RPM_BUILD_ROOT%{_bindir}
 cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
-	ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
+    ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
 done
 )
 
@@ -108,11 +120,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README doc/manual.ps
+%doc ChangeLog NEWS README doc/gprolog.ps doc/gprolog.pdf
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/%{name}-%{version}
 %dir %{_libdir}/%{name}-%{version}/bin
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
 %{_libdir}/%{name}-%{version}/include
 %{_libdir}/%{name}-%{version}/lib
+
+%files examples
+%defattr(644,root,root,755)
 %{_examplesdir}/%{name}-%{version}
