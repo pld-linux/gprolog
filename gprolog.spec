@@ -68,7 +68,7 @@ O GNU Prolog é um compilador nativo Prolog.
 
 %package examples
 Summary:    Examples for gprolog
-Summary(pl.UTF-8):  Przykłady dla gprolog
+Summary(pl.UTF-8):  Przykłady dla gprologa
 Group:	    Development/Languages
 Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-examples = %{version}-%{release}
@@ -77,7 +77,7 @@ Provides:   %{name}-examples = %{version}-%{release}
 Examples for gprolog.
 
 %description examples -l pl.UTF-8
-Przykłady dla gprolog.
+Przykłady dla gprologa.
 
 %prep
 %setup -q
@@ -99,18 +99,15 @@ cp %{SOURCE1} BipsPl/pred.wam
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd src
-%{__make} install
 
-(
+%{__make} -C src install
+
 install -d $RPM_BUILD_ROOT%{_bindir}
 cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
     ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
 done
-)
-
-cd ..
+cd -
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
