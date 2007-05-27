@@ -67,11 +67,11 @@ predefiniowanymi ograniczaczami i heurystykami.
 O GNU Prolog é um compilador nativo Prolog.
 
 %package examples
-Summary:    Examples for gprolog
-Summary(pl.UTF-8):  Przykłady dla gprologa
-Group:	    Development/Languages
-Requires:   %{name} = %{version}-%{release}
-Provides:   %{name}-examples = %{version}-%{release}
+Summary:	Examples for gprolog
+Summary(pl.UTF-8):	Przykłady dla gprologa
+Group:		Development/Languages
+Requires:	%{name} = %{version}-%{release}
+Provides:	%{name}-examples = %{version}-%{release}
 
 %description examples
 Examples for gprolog.
