@@ -12,7 +12,7 @@ Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
 URL:		http://www.gprolog.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-ExclusiveArch:	%{ix86} alpha ppc
+ExclusiveArch:	%{ix86} %{x8664} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
-    ln -s ../lib/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
+    ln -s ../%{_lib}/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
 done
 cd -
 
