@@ -3,15 +3,14 @@ Summary(es.UTF-8):	Prolog de GNU - un compilador libre de Prolog con resolución
 Summary(pl.UTF-8):	GNU Prolog - darmowy kompilator języka Prolog
 Summary(pt_BR.UTF-8):	O Prolog GNU
 Name:		gprolog
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
-# Source0-md5:	950736db26248f6ed942191ec6c441e9
-Source1:	%{name}-pred.wam
+# Source0-md5:	cbae19c31e17bcfca4b57fe35ec4aba2
 URL:		http://www.gprolog.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 ExclusiveArch:	%{ix86} alpha ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -84,7 +83,6 @@ Przykłady dla gprologa.
 
 %build
 cd src
-cp %{SOURCE1} BipsPl/pred.wam
 %{__aclocal}
 %{__autoconf}
 %configure \
