@@ -3,12 +3,12 @@ Summary(es.UTF-8):	Prolog de GNU - un compilador libre de Prolog con resolución
 Summary(pl.UTF-8):	GNU Prolog - darmowy kompilator języka Prolog
 Summary(pt_BR.UTF-8):	O Prolog GNU
 Name:		gprolog
-Version:	1.3.1
+Version:	1.4.0
 Release:	1
-License:	GPL
+License:	LGPL/GPL
 Group:		Development/Languages
 Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
-# Source0-md5:	cbae19c31e17bcfca4b57fe35ec4aba2
+# Source0-md5:	cc944e5637a04a9184c8aa46c947fd16
 URL:		http://www.gprolog.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -31,20 +31,20 @@ GNU Prolog also includes a powerful constraint solver over finite
 domains with many predefined constraints+heuristics.
 
 %description -l es.UTF-8
-GNU Prolog es un compilador nativo de Prolog con resolución de ligaduras
-sobre dominios finitos (FD: Finite Domains), desarrollado por Daniel Diaz
-(http://loco.inria.fr/~diaz/).
+GNU Prolog es un compilador nativo de Prolog con resolución de
+ligaduras sobre dominios finitos (FD: Finite Domains), desarrollado
+por Daniel Diaz (http://loco.inria.fr/~diaz/).
 
-GNU Prolog es un compilador nativo muy eficiente que produce ejecutables
-independientes (y pequeños). GNU Prolog también ofrece un clásico nivel alto
-y un depurador.
+GNU Prolog es un compilador nativo muy eficiente que produce
+ejecutables independientes (y pequeños). GNU Prolog también ofrece un
+clásico nivel alto y un depurador.
 
 GNU Prolog implementa el estándar ISO para Prolog, sin embargo incluye
-un montón de extensiones (variables globales, DCG, sockets, inferfaz de SO,
-...).
+un montón de extensiones (variables globales, DCG, sockets, inferfaz
+de SO, ...).
 
-GNU Prolog también habilita resolver ligaduras sobre dominios finitos con
-varias ligaduras predefinidas y unas heuristicas.
+GNU Prolog también habilita resolver ligaduras sobre dominios finitos
+con varias ligaduras predefinidas y unas heuristicas.
 
 %description -l pl.UTF-8
 GNU Prolog jest bezpośrednim kompilatorem Prologu z narzuconymi
@@ -90,7 +90,7 @@ cd src
 	--with-install-dir=$RPM_BUILD_ROOT%{_libdir}/%{name}-%{version} \
 	--with-c-flags="%{rpmcflags}" \
 	--without-links-dir \
-	--without-examples-dir \
+	--with-examples-dir=$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version} \
 	--without-doc-dir \
 	--without-html-dir
 %{__make}
@@ -105,10 +105,6 @@ cd $RPM_BUILD_ROOT%{_libdir}/%{name}-%{version}/bin
 for i in *; do
     ln -s ../%{_lib}/%{name}-%{version}/bin/$i $RPM_BUILD_ROOT%{_bindir}/$i
 done
-cd -
-
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a Examples* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
