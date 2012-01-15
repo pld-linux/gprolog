@@ -1,11 +1,11 @@
 Summary:	GNU Prolog - a free Prolog compiler with constraint solving over Finite Domains
 Summary(es.UTF-8):	Prolog de GNU - un compilador libre de Prolog con resolución de ligaduras sobre dominios finitos
-Summary(pl.UTF-8):	GNU Prolog - darmowy kompilator języka Prolog
+Summary(pl.UTF-8):	GNU Prolog - wolnodostępny kompilator języka Prolog
 Summary(pt_BR.UTF-8):	O Prolog GNU
 Name:		gprolog
 Version:	1.4.0
 Release:	1
-License:	LGPL/GPL
+License:	LGPL v3+ or GPL v2+
 Group:		Development/Languages
 Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
 # Source0-md5:	cc944e5637a04a9184c8aa46c947fd16
@@ -47,20 +47,21 @@ GNU Prolog también habilita resolver ligaduras sobre dominios finitos
 con varias ligaduras predefinidas y unas heuristicas.
 
 %description -l pl.UTF-8
-GNU Prolog jest bezpośrednim kompilatorem Prologu z narzuconymi
-ograniczeniami ponad "finite domains (FD)" tworzonym przez Daniela
-Diaz (http://loco.inria.fr/~diaz/)
+GNU Prolog jest bezpośrednim kompilatorem Prologu opartym na
+rozwiązywaniu problemów z ograniczeniami z dziedziną skończoną (FD),
+tworzonym przez Daniela Diaza (http://loco.inria.fr/~diaz/)
 
-GNU Prolog jest bardzo efektywnym bezpośrednim kompilatorem tworzącym
+GNU Prolog jest bardzo wydajnyym bezpośrednim kompilatorem tworzącym
 małe samodzielne programy wykonywalne. GNU-Prolog oferuje też
 klasyczny interfejs wysokiego poziomu oraz debugger.
 
 GNU Prolog jest zgodny z standardem ISO języka Prolog oraz oferuje
-dodatkowo kilka rozszerzeń (zmienne globalne, DCG, gniazdka, interfejs
-do systemu operacyjnego, ...).
+dodatkowo kilka rozszerzeń (zmienne globalne, DCG, gniazda, interfejs
+do systemu operacyjnego...).
 
-GNU Prolog zawiera też poręczny solver finite domains z wieloma
-predefiniowanymi ograniczaczami i heurystykami.
+GNU Prolog zawiera też poręczny moduł rozwiązywania problemów z
+ograniczeniami z dziedziną skończoną, z wieloma predefiniowanymi
+ograniczeniami i heurystykami.
 
 %description -l pt_BR.UTF-8
 O GNU Prolog é um compilador nativo Prolog.
@@ -111,8 +112,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README doc/gprolog.ps doc/gprolog.pdf
-%attr(755,root,root) %{_bindir}/*
+# COPYING contains also licensing summary
+%doc COPYING ChangeLog NEWS README doc/gprolog.ps doc/gprolog.pdf
+%attr(755,root,root) %{_bindir}/fd2c
+%attr(755,root,root) %{_bindir}/gplc
+%attr(755,root,root) %{_bindir}/gprolog
+%attr(755,root,root) %{_bindir}/hexgplc
+%attr(755,root,root) %{_bindir}/ma2asm
+%attr(755,root,root) %{_bindir}/pl2wam
+%attr(755,root,root) %{_bindir}/wam2ma
 %dir %{_libdir}/%{name}-%{version}
 %dir %{_libdir}/%{name}-%{version}/bin
 %attr(755,root,root) %{_libdir}/%{name}-%{version}/bin/*
