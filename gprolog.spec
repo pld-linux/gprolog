@@ -3,12 +3,12 @@ Summary(es.UTF-8):	Prolog de GNU - un compilador libre de Prolog con resolución
 Summary(pl.UTF-8):	GNU Prolog - wolnodostępny kompilator języka Prolog
 Summary(pt_BR.UTF-8):	O Prolog GNU
 Name:		gprolog
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	LGPL v3+ or GPL v2+
 Group:		Development/Languages
 Source0:	http://www.gprolog.org/%{name}-%{version}.tar.gz
-# Source0-md5:	cc944e5637a04a9184c8aa46c947fd16
+# Source0-md5:	433c733da92596ee40e6d4a934591a5b
 URL:		http://www.gprolog.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
